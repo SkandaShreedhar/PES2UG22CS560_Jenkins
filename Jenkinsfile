@@ -1,24 +1,24 @@
 pipeline {
-    agent any  // Runs on any available agent
+    agent any 
 
     stages {
         stage('Build') {
             steps {
                 script {
-                    // sh 'g++ -o hello_exec main/hello.cpp' // Compiles the C++ file
+                    sh 'g++ -o hello_exec main/hello.cpp' 
                 }
             }
         }
 
         stage('Test') {
-            // steps {
-                // script {
-                    sh './hello_exec'  // Runs the compiled executable
+            steps {
+                script {
+                    sh './hello_exec' 
                 }
             }
         }
 
-        // stage('Deploy') {
+        stage('Deploy') {
             steps {
                 echo 'Deployment step (Placeholder, as this is a basic pipeline)'
             }
