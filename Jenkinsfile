@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    echo "Building PES1UG22CS458-1..."
+                    echo "Building PES2UG22CS560-1..."
                 }
                 sh 'g++ main/hello.cpp -o main/hello_exec'
             }
