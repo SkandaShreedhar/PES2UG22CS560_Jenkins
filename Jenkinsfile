@@ -1,32 +1,33 @@
 pipeline {
     agent any
+
     stages {
         stage('Build') {
             steps {
                 script {
-                    echo "Building PES2UG22CS560-1..."
+                    sh 'g++ -o hello_exec main/hello.cpp'
                 }
-                sh 'g++ main/hello.cpp -o main/hello_exec'
             }
         }
+
         stage('Test') {
             steps {
                 script {
-                    echo "Running Tests..."
+                    sh './hello_exec'
                 }
-                sh './main/hello_exec'
             }
         }
+
         stage('Deploy') {
             steps {
-                echo 'Deploying the application...'
+                echo 'Deployment step (Placeholder, as this is a basic pipeline)'
             }
         }
     }
+
     post {
         failure {
-            echo 'Pipeline failed'
-            error 'Pipeline execution stopped due to failure.'
-        }
-    }
+            echo 'Pipeline failed!'
+        }
+    }
 }
