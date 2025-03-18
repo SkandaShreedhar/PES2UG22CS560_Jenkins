@@ -5,20 +5,20 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    sh 'g++ -o hello_exec main/hello.cpp' // Compiles the C++ file
+                    // sh 'g++ -o hello_exec main/hello.cpp' // Compiles the C++ file
                 }
             }
         }
 
         stage('Test') {
-            steps {
-                script {
+            // steps {
+                // script {
                     sh './hello_exec'  // Runs the compiled executable
                 }
             }
         }
 
-        stage('Deploy') {
+        // stage('Deploy') {
             steps {
                 echo 'Deployment step (Placeholder, as this is a basic pipeline)'
             }
